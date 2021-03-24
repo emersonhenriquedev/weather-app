@@ -19,6 +19,13 @@ const WeatherContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 6% 3%;
+
+  @media (max-width: 750px) {
+    padding: 6% 1%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const WeatherWidgets = styled.div`
@@ -43,6 +50,19 @@ const WeatherWidgets = styled.div`
     color: #fff;
     font-size: 1rem;
     margin: 0;
+  }
+
+  @media (max-width: 750px) {
+    .temperature {
+      font-size: 3rem;
+    }
+    .city {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    .date {
+      font-size: 0.8rem;
+    }
   }
 `;
 

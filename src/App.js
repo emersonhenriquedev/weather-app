@@ -23,6 +23,12 @@ const Panel = styled.div`
 
   display: grid;
   grid-template-columns: 2fr 1fr;
+  @media (max-width: 750px) {
+    grid-template-areas:
+      "content"
+      "sidebar";
+    grid-template-columns: 1fr;
+  }
 `;
 
 function App() {
