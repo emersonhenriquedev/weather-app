@@ -2,7 +2,7 @@
 
 Web application that connects to a weather API (https://hgbrasil.com/status/weather).
 
-![Screenshot](screenshot.png)
+![Screenshot](Screenshot.png)
 
 ## Running Locally
 
