@@ -25,7 +25,13 @@ const Title = styled.p`
 
 const WeatherDetails = () => {
   const { weather } = React.useContext(WeatherContext);
-  const { humidity, wind_speedy, sunrise, sunset } = weather.results;
+  const {
+    humidity,
+    wind_speedy,
+    sunrise,
+    sunset,
+    description,
+  } = weather.results;
   return (
     <Container>
       <Title>Weather Details </Title>
@@ -34,6 +40,7 @@ const WeatherDetails = () => {
         <Condition name="Wind" value={wind_speedy} />
         <Condition name="Sunrise" value={sunrise} />
         <Condition name="Sunset" value={sunset} />
+        <Condition name="Description" value={description} />
       </div>
     </Container>
   );

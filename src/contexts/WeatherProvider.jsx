@@ -14,14 +14,15 @@ export const WeatherProvider = (props) => {
   }, []);
 
   const fetchWeather = async (city) => {
+    setIsLoading(true);
     try {
       const response = await api.get(
         `?format=json-cors&key=${key}&city_name=${city}`
       );
       console.log(response.data);
       setWeather(response.data);
-      setIsLoading(false);
       setQuery(city);
+      setIsLoading(false);
     } catch (err) {
       console.error(err);
       alert("Houve um erro na requisição!");

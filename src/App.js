@@ -3,6 +3,7 @@ import "./App.css";
 
 import React, { useContext } from "react";
 import styled from "styled-components";
+import Loader from "react-loader-spinner";
 
 import Sidebar from "./components/Sidebar";
 import Weather from "./components/Weather";
@@ -14,6 +15,10 @@ const Background = styled.div`
   background-image: url("./assets/${(props) => props.image}");
   background-position: center bottom;
   background-size: cover;
+`;
+
+const BackgroundLoader = styled.div`
+  background-image: linear-gradient(to bottom, #1ed6ff, #97c1ff);
 `;
 
 const Panel = styled.div`
@@ -52,7 +57,20 @@ function App() {
     }
   };
   if (isLoading) {
-    return <h4>Loading...</h4>;
+    return (
+      <BackgroundLoader>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minHeight: "100vh",
+          }}
+        >
+          <Loader type="Bars" height={100} width={100} color="#fff" />
+        </div>
+      </BackgroundLoader>
+    );
   }
   return (
     <div className="App">

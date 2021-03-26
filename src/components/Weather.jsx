@@ -31,6 +31,7 @@ const WeatherContainer = styled.div`
 const WeatherWidgets = styled.div`
   display: flex;
   justify-content: space-between;
+  align-content: space-between;
   align-items: baseline;
 
   .temperature {
@@ -49,12 +50,15 @@ const WeatherWidgets = styled.div`
   .date {
     color: #fff;
     font-size: 1rem;
-    margin: 0;
+    margin: 10% 0;
   }
 
   @media (max-width: 750px) {
+    padding: 0 2%;
+
     .temperature {
       font-size: 3rem;
+      font-weight: 700;
     }
     .city {
       font-size: 1.5rem;
@@ -69,7 +73,7 @@ const WeatherWidgets = styled.div`
 const Weather = () => {
   const { weather } = React.useContext(WeatherContext);
 
-  const Icon = (name) => {
+  const Icon = ({ name }) => {
     switch (name) {
       case "cloud":
       case "cloudly_day":
@@ -93,9 +97,11 @@ const Weather = () => {
         <p className="temperature">{weather.results.temp}°</p>
         <div className="cityBox">
           <p className="city">{weather.results.city}</p>
-          <p className="date">{weather.results.date}</p>
+          <p className="date">
+            {weather.results.time} - {weather.results.date}
+          </p>
         </div>
-        <Icon name={weather.condition_slug} />
+        <Icon name={weather.results.condition_slug} />
       </WeatherWidgets>
     </WeatherContainer>
   );

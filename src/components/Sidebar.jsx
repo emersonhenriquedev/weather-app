@@ -32,6 +32,10 @@ const Input = styled.input`
   color: #b0c5d1;
   height: 25px;
   font-size: 1.1rem;
+
+  @media (max-width: 750px) {
+    width: 100%;
+  }
 `;
 
 const Button = styled.button`
